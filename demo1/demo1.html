@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scalse=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <title>Appointment Registration</title>
+  </head>
+  <body>
+    <div style="float: right">
+      <div style="display: flex; align-items: center">
+        <div
+          style="
+            height: 15px;
+            width: 15px;
+            background-color: #808080;
+            margin-right: 10px;
+          "
+        ></div>
+        <span>Past appointments</span>
+      </div>
+      <div style="display: flex; align-items: center">
+        <div
+          style="
+            height: 15px;
+            width: 15px;
+            background-color: #676ee6;
+            margin-right: 10px;
+          "
+        ></div>
+        <span>Upcoming appointments</span>
+      </div>
+      <div style="display: flex; align-items: center">
+        <div
+          style="
+            height: 15px;
+            width: 15px;
+            background-color: #5ed67c;
+            margin-right: 10px;
+          "
+        ></div>
+        <span>Running appointments</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="ms-3 p-2 pt-5 text-center">
+        <button
+          class="btn btn-info btn-outline-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#reg-modal"
+        >
+          Register for Appointments
+        </button>
+      </div>
+    </div>
+
+    <!--modal--->
+    <div
+      class="modal fade"
+      id="reg-modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modal1">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">
+              Please enter appointment details
+            </h4>
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="container">
+            <div class="row justify-content-center my-2">
+              <div class="col-lg-10">
+                
+                <form id="taskForm">
+                  <label for="name" class="form-label">Name:</label>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text">
+                      <i class="bi bi-person-circle"></i>
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="e.g. Gilbert"
+                      required
+                    />
+
+                    <!--tootltip-->
+                    <span class="input-group-text">
+                      <span
+                        class="tt"
+                        data-bs-placement="bottom"
+                        title="Enter your name"
+                      >
+                        <i class="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                  </div>
+
+                  <label for="email" class="form-label">Email address:</label>
+                  <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-envelope"></i>
+                    </span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="e.g. xyz@gmail.com"
+                      required
+                    >
+                    <!--tootltip-->
+                    <span class="input-group-text">
+                      <span
+                        class="tt"
+                        data-bs-placement="bottom"
+                        title="Enter email address we can reply to"
+                      >
+                        <i class="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                  </div>
+
+                  <label for="date" class="form-label">Select Date:</label>
+                  <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-calendar"></i>
+                    </span>
+                    <input type="Date" class="form-control" id="date" />
+                    <!--tootltip-->
+                    <span class="input-group-text">
+                      <span
+                        class="tt"
+                        data-bs-placement="bottom"
+                        title="pick the date"
+                      >
+                        <i class="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                  </div>
+
+                  <label for="date" class="form-label">Select Time:</label>
+                  <div class="mb-4 input-group">
+                    <label for="date" class="form-label">From:</label>
+                    &nbsp;
+                    <span class="input-group-text">
+                      <i class="bi bi-clock"></i>
+                    </span>
+                    <select name="startTime" id="stime"></select>
+                    <span class="input-group-text">
+                      <span
+                        class="tt"
+                        data-bs-placement="bottom"
+                        title="pick starting time"
+                      >
+                        <i class="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <label for="date" class="form-label">To:</label>
+                    &nbsp;
+                    <span class="input-group-text">
+                      <i class="bi bi-clock"></i>
+                    </span>
+                    <select name="endTime" id="etime"></select>
+                    <!--tootltip-->
+                    <span class="input-group-text">
+                      <span
+                        class="tt"
+                        data-bs-placement="bottom"
+                        title="pick ending time"
+                      >
+                        <i class="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                  </div>
+
+                  <label for="description" class="form-label"
+                    >Description:</label
+                  >
+                  <div class="form-floating">
+                    <textarea
+                      id="descr"
+                      class="form-control"
+                      style="height: 70px"
+                    ></textarea>
+                    <label for="query"
+                      >Write symptoms or purpose of your appointment</label
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary"  data-bs-dismiss="modal" onclick="addApointment(event)">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="dashboard">
+      <div class="container-lg pt-5">
+        <table class="table">
+          <thead>
+            <th scope="'col">Name</th>
+            <th scope="'col">Email</th>
+            <th scope="'col">Date</th>
+            <th scope="'col">Start Time</th>
+            <th scope="'col">End Time</th>
+            <th scope="'col">Description</th>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="./demo1.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt");
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+  </body>
+</html>
